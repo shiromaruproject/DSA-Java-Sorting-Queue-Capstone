@@ -6,6 +6,8 @@ A console-based Java capstone for IT2A Data Structures and Algorithms. A clinic 
 
 The application uses one `Main` class with static methods. Patient fields are stored in parallel ArrayLists, and a LinkedList-backed Queue stores the IDs of waiting patients. Bubble Sort and Insertion Sort are implemented manually.
 
+GitHub repository: [shiromaruproject/DSA-Java-Sorting-Queue-Capstone](https://github.com/shiromaruproject/DSA-Java-Sorting-Queue-Capstone) (Public).
+
 The repository's supplied instructions are in `AGENT.md`; there is no `AGENTS.md` file.
 
 ## Objectives
@@ -151,10 +153,10 @@ The implementation was compiled with the installed OpenJDK 25 compiler, includin
 - [x] Letters, blank input, out-of-range values, missing records, and empty queue/list are handled gracefully.
 - [x] All required README sections and the screenshot list are complete.
 
-### Remaining submission tasks
+### Submission status
 
 - [ ] Capture and add the seven real screenshots above, then embed them with their captions.
-- [ ] Publish/push the repository to GitHub and make it public or grant the instructor access.
+- [x] Publish/push the repository to GitHub and make it public or grant the instructor access.
 - [ ] Submit the GitHub repository URL on Canvas before **October 31, 2026, at 11:59 PM**, as specified in `AGENT.md`.
 
-Local Git commits separate the implementation from documentation. No GitHub remote was configured when this project was built; publishing and course submission remain your responsibility.
+The public GitHub repository includes the implementation and documentation commit history. Add the real screenshots, commit and push them, then submit the repository URL on Canvas.
