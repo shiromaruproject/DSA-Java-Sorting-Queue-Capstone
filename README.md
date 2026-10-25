@@ -127,19 +127,62 @@ These are example inputs and expected behavior, not screenshots or captured outp
 
 ## Screenshots of the System
 
-**Status: awaiting your real screenshots.** The `screenshots/` folder contains capture instructions only. No screenshot images have been generated, fabricated, or included. Run the app yourself and capture actual terminal output using the following filenames. The captions describe what each image must demonstrate.
+**Status: seven real screenshots cover six of the seven required categories.** These terminal captures were supplied by the student and are included unchanged. The input-validation screenshot is still pending.
 
-| Filename to save | Caption / output to capture |
+| File | Coverage |
 | --- | --- |
-| `screenshots/main-menu.png` | The running system's main menu with its options and input prompt. |
-| `screenshots/add-and-display-records.png` | Successful patient registration and the displayed records, including IDs, names, ages, and appointment times. |
-| `screenshots/queue-operations.png` | Enqueue, peek, dequeue, and queue display output, showing the front patient and remaining patients. |
-| `screenshots/fifo-behavior.png` | Patients enqueued in a known order and called in the same order, even after sorting their records. |
-| `screenshots/sorting-algorithm-1.png` | Bubble Sort output with both BEFORE SORTING and AFTER SORTING tables visible. |
-| `screenshots/sorting-algorithm-2.png` | Insertion Sort output with both BEFORE SORTING and AFTER SORTING tables visible. |
-| `screenshots/input-validation.png` | Invalid input and recovery, such as a letter at the menu, a rejected age or time, and an empty queue message. |
+| `screenshots/main-menu.png` | Main menu and input prompt. |
+| `screenshots/add-and-display-records.png` | Successful registration and display of a patient record. |
+| `screenshots/queue-enqueue.png` | Enqueueing three patients in arrival order (supplementary queue capture). |
+| `screenshots/queue-operations.png` | Peek and queue display; dequeue is shown in the FIFO capture below. |
+| `screenshots/fifo-behavior.png` | The front patient is called and the remaining patients retain their order. |
+| `screenshots/sorting-algorithm-1.png` | Bubble Sort by name, before and after. |
+| `screenshots/sorting-algorithm-2.png` | Insertion Sort by name on an already sorted list, before and after. |
+| `screenshots/input-validation.png` | **Pending:** invalid input, successful retries, and empty queue messages. |
 
-Use the example workflow above to demonstrate records, sorting, and FIFO. For validation, try `abc` at the menu, age `-1`, appointment `25:00`, and calling the next patient when the queue is empty; then enter valid values to show recovery. Keep the relevant terminal output readable, using terminal scrollback or additional real screenshots if one image cannot show every operation. After capture, add the images to this folder and embed each in this section with its caption.
+### Main menu
+
+![Clinic main menu](screenshots/main-menu.png)
+
+The running console application displays all patient-management, sorting, and consultation-queue options.
+
+### Adding and displaying records
+
+![Adding and displaying a patient record](screenshots/add-and-display-records.png)
+
+Zoe Cruz is registered as patient ID 1, age 40, with an 08:15 appointment. Displaying records shows the same four fields together.
+
+### Queue operations
+
+![Enqueueing three patients](screenshots/queue-enqueue.png)
+
+Patients 1, 2, and 3 are enqueued in that order, receiving queue positions 1, 2, and 3.
+
+![Peeking and displaying the consultation queue](screenshots/queue-operations.png)
+
+Peek shows patient 1 without removing her. Queue display still shows IDs 1, 2, and 3 from front to rear. The FIFO screenshot below demonstrates dequeue.
+
+### FIFO behavior
+
+![Calling the front patient and preserving the remaining queue order](screenshots/fifo-behavior.png)
+
+The queue initially contains IDs 1, 2, and 3. Dequeue calls ID 1, Zoe Cruz, and the next queue display contains IDs 2 and 3 in the same relative order.
+
+### Bubble Sort: before and after
+
+![Bubble Sort by patient name before and after](screenshots/sorting-algorithm-1.png)
+
+Bubble Sort changes the name order from Zoe, Ana, Ben (IDs 1, 2, 3) to Ana, Ben, Zoe (IDs 2, 3, 1). Each patient's ID, age, and appointment time stays with their name.
+
+### Insertion Sort: before and after
+
+![Insertion Sort by name on an already sorted list](screenshots/sorting-algorithm-2.png)
+
+Insertion Sort is selected with name as its key. The records already appear as Ana, Ben, Zoe, so the before and after order correctly remains IDs 2, 3, and 1. This demonstrates the already sorted case. For a clearer demonstration of records moving, an optional replacement capture can use option **5**, then **2**, then **3** to sort these records by appointment time (IDs 1, 3, 2).
+
+### Input validation: capture still needed
+
+Save a real capture as `screenshots/input-validation.png` and embed it here. Show invalid input followed by successful retries: enter `abc` at the menu, age `-1` followed by a valid age, and appointment `25:00` followed by a valid time. Also capture the message when calling the next patient with an empty queue. Use additional real images if all the output will not fit readably in one capture.
 
 ## Verification Checklist
 
@@ -155,8 +198,9 @@ The implementation was compiled with the installed OpenJDK 25 compiler, includin
 
 ### Submission status
 
-- [ ] Capture and add the seven real screenshots above, then embed them with their captions.
+- [x] Add and caption real screenshots of the menu, registration, queue operations, FIFO, and both sorting algorithms.
+- [ ] Capture and add `screenshots/input-validation.png`, then embed it with a caption.
 - [x] Publish/push the repository to GitHub and make it public or grant the instructor access.
 - [ ] Submit the GitHub repository URL on Canvas before **October 31, 2026, at 11:59 PM**, as specified in `AGENT.md`.
 
-The public GitHub repository includes the implementation and documentation commit history. Add the real screenshots, commit and push them, then submit the repository URL on Canvas.
+The public GitHub repository includes the implementation, documentation, and supplied real screenshots with their commit history. Add the remaining validation capture, commit and push it, then submit the repository URL on Canvas.
